@@ -1,0 +1,4 @@
+Customer Name - Rishu
+Customer Id - CAP6773
+Customer Age - 34
+Customer Gender - Male
