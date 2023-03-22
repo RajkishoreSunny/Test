@@ -1,0 +1,9 @@
+using System;
+class Program
+{
+   static void Main(string[] args)
+   {
+       double salary = 50000;
+       Console.WriteLine(salary);
+   }
+}
