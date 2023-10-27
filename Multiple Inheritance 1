@@ -1,0 +1,36 @@
+using System;
+
+interface Grandfather
+{
+    public void GeneOfGF();
+}
+interface Father
+{
+    public void GeneOfF();
+    
+}
+public class Son : Grandfather, Father
+{
+    public void GeneOfF()
+    {
+        Console.WriteLine("I am the father and I posses the gene from and father and my son posseses the gene of mine!");
+    }
+    public void GeneOfGF()
+    {
+        Console.WriteLine("I am the grandfather and my gene is in my son and grandson!");
+    }
+    public void MyGene()
+    {
+        Console.WriteLine("I also posses some traits of mine!");
+    }
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Son son = new Son();
+        son.GeneOfF();
+        son.GeneOfGF();
+        son.MyGene();
+    }
+}
