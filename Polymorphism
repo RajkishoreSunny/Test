@@ -1,0 +1,35 @@
+using System;
+
+public class Car
+{
+    public virtual void MyCar()
+    {
+        Console.WriteLine("This is a Car.");
+    }
+}
+public class RollsRoyce : Car
+{
+    public override void MyCar()
+    {
+        Console.WriteLine("The Car has 6.7 L V12 Engine and gives a mileage of 10 Kmpl");
+    }
+}
+public class Phantom : Car
+{
+    public override void MyCar()
+    {
+        Console.WriteLine("And the Model of the car is Rolls Royce Phantom");
+    }
+}
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Car car = new Car();
+        car.MyCar();
+        RollsRoyce rr = new RollsRoyce();
+        rr.MyCar();
+        Phantom p = new Phantom();
+        p.MyCar();
+    }
+}
