@@ -1,0 +1,38 @@
+using System;
+ 
+public class Car
+{
+    string Company = "Roll's Royce";
+    string Model = "Cullinun";
+    public void Print()
+    {
+        Console.WriteLine(Company + " " + Model);
+    }
+}
+public class Engine : Car
+{
+    string Type = "Turbo Petrol";
+    public void PrintEngine()
+    {
+        Console.WriteLine(Type);
+    }
+}
+public class Power : Engine
+{
+    int PowerOfEngine = 6900;
+    public void PrintPower()
+    {
+        Console.WriteLine(PowerOfEngine + "cc");
+    }
+}
+ 
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Power power = new Power();
+        power.Print();
+        power.PrintEngine();
+        power.PrintPower();
+    }
+}
