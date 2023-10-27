@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+
+public class Employee
+{
+    public int Id {get; set;}
+    public string Name {get; set;}
+    public string PhoneNumber {get; set;}
+    public string Address {get; set;}
+}
+class Program
+{
+    public static void Main(string[] args)
+    {
+        List<Employee> EmpList = new List<Employee>()
+        {
+          new Employee(){Id = 1, Name = "Bill Gates", PhoneNumber = "8775765363", Address = "New Jersey"},
+          new Employee(){Id = 2, Name = "John Cena", PhoneNumber = "8745648022", Address = "Los Angeles"},
+          new Employee(){Id = 3, Name = "Daniel Bryan", PhoneNumber = "8756635632", Address = "New York City"},
+          new Employee(){Id = 4, Name = "Harry Potter", PhoneNumber = "9887665547", Address = "London"},
+          new Employee(){Id = 5, Name = "Dwayne Johnson", PhoneNumber = "6747879478", Address = "Las Vegas"}
+        };
+        
+        foreach(var employee in EmpList)
+        {
+            Console.WriteLine("Id: " + employee.Id);
+            Console.WriteLine("Name: " + employee.Name);
+            Console.WriteLine("PhoneNumber: " + employee.PhoneNumber);
+            Console.WriteLine("Address: " + employee.Address);
+        }
+        
+        Console.WriteLine("Do you want to add new Employee?Type Yes or No");
+        string answer = Console.ReadLine();
+        if(answer == "Yes")
+        {
+            while(true)
+            {
+                Console.WriteLine("Enter ID: ");
+                int ID = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Name: ");
+                string Name = Console.ReadLine();
+                Console.WriteLine("PhoneNumber: ");
+                string PhoneNumber = Console.ReadLine();
+                Console.WriteLine("Address: ");
+                string Address = Console.ReadLine();
+                
+                Employee employee = new Employee()
+                {
+                    Id = ID,
+                    Name = Name,
+                    PhoneNumber = PhoneNumber,
+                    Address = Address
+                };
+                EmpList.Add(employee);
+                Console.WriteLine("Do you want to add more Employees? Write Yes or No");
+                string value = Console.ReadLine();
+                if(value == "Yes")
+                {
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            foreach(var employee in EmpList)
+            {
+                Console.WriteLine("Id: " + employee.Id);
+                Console.WriteLine("Name: " + employee.Name);
+                Console.WriteLine("PhoneNumber: " + employee.PhoneNumber);
+                Console.WriteLine("Address: " + employee.Address);
+            }
+        }
+    }
+}
