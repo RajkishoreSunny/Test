@@ -1,0 +1,45 @@
+using System;
+
+interface Circle
+{
+    double AreaOfCircle();
+}
+
+interface Rectangle
+{
+    int AreaOfRectangle();
+}
+
+public class Area : Circle, Rectangle
+{
+    private int length;
+    private int breadth;
+    private double radius;
+    
+    public Area(int length, int breadth, double radius)
+    {
+        this.length = length;
+        this.breadth = breadth;
+        this.radius = radius;
+    }
+    public double AreaOfCircle()
+    {
+        double Area = 3.14 * radius * radius;
+        return Area;
+    }
+    public int AreaOfRectangle()
+    {
+        int Area = length * breadth;
+        return Area;
+    }
+}
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Area area = new Area(5, 6, 10);
+        Console.WriteLine("Area of Circle is " + area.AreaOfCircle() + "m");
+        Console.WriteLine("Area of Rectangle is " + area.AreaOfRectangle() + "m");
+    }
+}
